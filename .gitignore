@@ -10,7 +10,7 @@
 !.yarn/releases
 !.yarn/versions
 
-/app/generated
+/app/generated/prisma/client.js
 
 # testing
 /coverage
