@@ -2,8 +2,20 @@
 
 import Image from 'next/image';
 
-const Avatar = () => {
-    return (
+interface AvatarProps {
+    src?: string | null | undefined;
+}
+
+const Avatar: React.FC<AvatarProps> = ({ src }) => {
+    return src ? (
+        <Image
+            className="rounded-full"
+            src={src || '/images/avatar.jpg'}
+            alt="Avatar"
+            width={30}
+            height={30}
+        />
+    ) : (
         <svg
             viewBox="0 0 32 32"
             aria-hidden="true"
