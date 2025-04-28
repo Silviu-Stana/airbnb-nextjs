@@ -27,7 +27,7 @@ const HeartButton: React.FC<HeartButtonProps> = ({
                 className="absolute fill-white -top-[2px] -right-[2px]"
             />
             <AiFillHeart
-                size={28}
+                size={26}
                 className={`
                                   ${
                                       hasFavorited
