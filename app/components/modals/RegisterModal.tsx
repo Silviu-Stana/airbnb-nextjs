@@ -12,11 +12,14 @@ import Button from '../Button';
 import { AiFillGithub } from 'react-icons/ai';
 import { signIn } from 'next-auth/react';
 import useLoginModal from '@/app/hooks/useLoginModal';
+import { useRouter } from 'next/navigation';
 
 const RegisterModal = () => {
     const registerModal = useRegisterModal();
     const loginModal = useLoginModal();
     const [isLoading, setIsLoading] = useState(false);
+
+    const router = useRouter();
 
     const {
         register,
@@ -36,6 +39,10 @@ const RegisterModal = () => {
             .post('/api/register', data)
             .then(() => {
                 registerModal.onClose();
+                toast.success('Registered');
+                signIn('credentials', { ...data, redirect: false }).then(() => {
+                    router.refresh();
+                });
             })
             .catch((error) => {
                 toast.error('Something went wrong.');

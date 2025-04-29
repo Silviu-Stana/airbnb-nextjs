@@ -1,12 +1,12 @@
 'use client';
+import { Range } from 'react-date-range';
 import Container from '@/app/components/Container';
 import ListingHead from '@/app/components/listings/ListingHead';
 import ListingInfo from '@/app/components/listings/ListingInfo';
 import ListingReservation from '@/app/components/listings/ListingReservation';
 import { categories } from '@/app/constants/categories';
-import { Reservation } from '@/app/generated/prisma';
 import useLoginModal from '@/app/hooks/useLoginModal';
-import { SafeListing, SafeUser } from '@/app/types';
+import { SafeListing, SafeReservation, SafeUser } from '@/app/types';
 import axios from 'axios';
 import { differenceInCalendarDays, eachDayOfInterval } from 'date-fns';
 import { useRouter } from 'next/navigation';
@@ -20,7 +20,7 @@ const initialDateRange = {
 };
 
 interface ListingClientProps {
-    reservations?: Reservation[];
+    reservations?: SafeReservation[];
     listing: SafeListing & {
         user: SafeUser;
     };
@@ -50,7 +50,7 @@ const ListingClient: React.FC<ListingClientProps> = ({
 
     const [isLoading, setIsLoading] = useState(false);
     const [totalPrice, setTotalPrice] = useState(listing.price);
-    const [dateRange, setDateRange] = useState(initialDateRange);
+    const [dateRange, setDateRange] = useState<Range>(initialDateRange);
 
     const onCreateReservation = useCallback(() => {
         if (!currentUser) return loginModal.onOpen();
@@ -67,8 +67,7 @@ const ListingClient: React.FC<ListingClientProps> = ({
             .then(() => {
                 toast.success('Listing reserved!');
                 setDateRange(initialDateRange);
-                //redirect to /trips
-                router.refresh();
+                router.push('/trips');
             })
             .catch(() => {
                 toast.error('Something went wrong!');
