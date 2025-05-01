@@ -10,7 +10,8 @@ interface IParams {
 export default async function getReservations(params: IParams) {
     try {
         const { listingId, userId, authorId } = await params;
-        const query: Prisma.ReservationWhereInput = {};
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        const query: any = {};
 
         if (listingId) query.listingId = listingId;
         if (userId) query.userId = userId;
