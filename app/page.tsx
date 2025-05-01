@@ -35,7 +35,8 @@ const Home = async ({ searchParameters }: HomeProps) => {
         <ClientOnly>
             <Container>
                 <div className="pt-24 p-5 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 lg:grid-cols-5 2xl:grid-cols-6 gap-8">
-                    {listings.map((listing) => {
+                    {/* eslint-disable-next-line @typescript-eslint/no-explicit-any */}
+                    {listings.map((listing: any) => {
                         return (
                             <ListingCard
                                 currentUser={currentUser}

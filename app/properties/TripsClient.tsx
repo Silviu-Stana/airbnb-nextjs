@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 'use client';
 import React, { useCallback, useState } from 'react';
 import { SafeListing, SafeUser } from '../types';
@@ -47,7 +48,7 @@ const PropertiesClient: React.FC<PropertiesClientProps> = ({
                     subtitle="List of your properties"
                 />
                 <div className="mt-10 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-6 gap-6">
-                    {listings.map((listing) => {
+                    {listings.map((listing: any) => {
                         return (
                             <ListingCard
                                 key={listing.id}
