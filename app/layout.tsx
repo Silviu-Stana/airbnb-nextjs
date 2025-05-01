@@ -8,14 +8,15 @@ import ToasterProvider from './providers/ToasterProvider';
 import getCurrentUser from './actions/getCurrentUser';
 import LoginModal from './components/modals/LoginModal';
 import RentModal from './components/modals/RentModal';
+import SearchModal from './components/modals/SearchModal';
 
 const font = Nunito({
     subsets: ['latin'],
 });
 
 export const metadata: Metadata = {
-    title: 'Airbnb',
-    description: 'Airbnb app made with next.js',
+    title: 'Renting App',
+    description: 'Renting app made with next.js',
 };
 
 export default async function RootLayout({
@@ -33,6 +34,7 @@ export default async function RootLayout({
                     <RentModal />
                     <LoginModal />
                     <RegisterModal />
+                    <SearchModal />
                     <Navbar currentUser={currentUser} />
                 </ClientOnly>
                 <div className="pb-20 pt-28">{children}</div>

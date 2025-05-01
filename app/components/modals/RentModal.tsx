@@ -256,7 +256,7 @@ const RentModal = () => {
             actionLabel={actionLabel}
             secondaryActionLabel={secondaryActionLabel}
             secondaryAction={step === STEPS.CATEGORY ? undefined : onBack}
-            title="Airbnb your home!"
+            title="Rent your home!"
             body={bodyContent}
         />
     );
