@@ -29,15 +29,16 @@ This is a modern Airbnb clone built with [Next.js](https://nextjs.org), leveragi
 -However, here is a Live Vercel deployment where you can view the site: 
 ```
 
-<br>
 To get started with the project, follow these steps:
 1. Clone the repository:
    ```bash
    git clone https://github.com/your-username/airbnb-clone.git
    cd airbnb-clone
+   ```
 2. Run:
    ```bash
    npm install
+   ```
 3. Set up Environment variables
 
 ## Technologies Used
