@@ -35,6 +35,9 @@ importers:
       next-cloudinary:
         specifier: ^6.16.0
         version: 6.16.0(next@15.2.4(react-dom@19.1.0(react@19.1.0))(react@19.1.0))(react@19.1.0)
+      prisma-client-86da613031369cde536fdc8bb6e5f3c063301d7cfe879072b730d3f5d7a35b36:
+        specifier: link:prisma\prisma-client
+        version: link:prisma/prisma-client
       query-string:
         specifier: ^9.1.1
         version: 9.1.1
