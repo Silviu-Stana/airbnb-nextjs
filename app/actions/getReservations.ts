@@ -27,7 +27,8 @@ export default async function getReservations(params: IParams) {
             },
         });
 
-        const safeReservations = reservations.map((reservation) => ({
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        const safeReservations = reservations.map((reservation: any) => ({
             ...reservation,
             createdAt: reservation.createdAt.toISOString(),
             startDate: reservation.startDate.toISOString(),
