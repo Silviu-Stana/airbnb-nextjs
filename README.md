@@ -1,11 +1,11 @@
 # Airbnb re-built with Next.js!
 
-This is a modern Airbnb clone built with [Next.js](https://nextjs.org), leveraging server-side rendering, Tailwind CSS for styling, and Prisma for database management! The project is bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+This is a modern Airbnb clone built with [Next.js](https://nextjs.org), leveraging server-side rendering, Tailwind CSS for styling, and Prisma for database management!
 
 ## Table of Contents
 
 - [Features](#features)
-- [Getting Started](#getting-started)
+- [View The Site](#view-the-site)
 - [Technologies Used](#technologies-used)
 
 ---
@@ -20,26 +20,12 @@ This is a modern Airbnb clone built with [Next.js](https://nextjs.org), leveragi
 
 ---
 
-## Getting Started
+## View The Site
+- ✅ View the finished site:
+  https://rental-app-nextjs.vercel.app/
+- Secret Environment variables are not commited to github
 
 
-```bash
-## IMPORTANT NOTE:
--Since the Secret Environment variables are not commited to github, you won't be able to run this project.
--However, here is a Live Vercel deployment where you can view the site: 
-```
-
-To get started with the project, follow these steps:
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/your-username/airbnb-clone.git
-   cd airbnb-clone
-   ```
-2. Run:
-   ```bash
-   npm install
-   ```
-3. Set up Environment variables
 
 ## Technologies Used
 * Next.js: Framework for server-side rendering and static site generation.
