@@ -1,27 +1,16 @@
 import getCurrentUser from './actions/getCurrentUser';
-import getListings from './actions/getListings';
+import getListings, { IListingsParams } from './actions/getListings';
 import ClientOnly from './components/ClientOnly';
 import Container from './components/Container';
 import EmptyState from './components/EmptyState';
 import ListingCard from './components/listings/ListingCard';
 
-export interface IListingsParams {
-    userId?: string;
-    guestCount?: number;
-    roomCount?: number;
-    bathroomCount?: number;
-    startDate?: string;
-    endDate?: string;
-    locationValue?: string;
-    category?: string;
-}
-
 interface HomeProps {
-    searchParameters: IListingsParams;
+    searchParams: IListingsParams;
 }
 
-const Home = async ({ searchParameters }: HomeProps) => {
-    const listings = await getListings(searchParameters);
+const Home = async ({ searchParams }: HomeProps) => {
+    const listings = await getListings(searchParams);
     const currentUser = await getCurrentUser();
 
     if (listings.length === 0)
