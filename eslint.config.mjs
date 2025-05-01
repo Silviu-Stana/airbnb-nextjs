@@ -10,10 +10,12 @@ const compat = new FlatCompat({
 });
 
 const eslintConfig = [
+    {
+        ignores: ['app/generated/prisma/client/**'],
+    },
     ...compat.extends('next/core-web-vitals', 'next/typescript'),
     {
         rules: {
-            // Disable unused variable rule
             '@typescript-eslint/no-unused-vars': 'off',
         },
     },
