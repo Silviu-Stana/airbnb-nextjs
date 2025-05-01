@@ -1,6 +1,5 @@
 import prisma from '@/app/libs/prismadb';
 import getCurrentUser from './getCurrentUser';
-import { Listing } from '@prisma/client';
 
 export default async function getFavoriteListings() {
     try {
@@ -15,13 +14,17 @@ export default async function getFavoriteListings() {
             },
         });
 
-        const safeFavorites = favorites.map((favorite: Listing) => ({
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        const safeFavorites = favorites.map((favorite: any) => ({
             ...favorite,
             createdAt: favorite.createdAt.toISOString(),
         }));
 
         return safeFavorites;
-    } catch (error) {
-        throw new Error(error instanceof Error ? error.message : String(error));
+    } catch (error: unknown) {
+        if (error instanceof Error) {
+            throw new Error(error.message);
+        }
+        throw new Error('An unexpected error occurred');
     }
 }
