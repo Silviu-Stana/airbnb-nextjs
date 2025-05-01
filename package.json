@@ -4,7 +4,7 @@
     "private": true,
     "scripts": {
         "dev": "next dev --turbopack",
-        "build": "prisma generate && next build",
+        "build": "next build",
         "start": "next start",
         "lint": "next lint"
     },
@@ -21,7 +21,6 @@
         "next": "15.2.4",
         "next-auth": "^4.24.11",
         "next-cloudinary": "^6.16.0",
-        "prisma-client-86da613031369cde536fdc8bb6e5f3c063301d7cfe879072b730d3f5d7a35b36": "link:prisma\\prisma-client",
         "query-string": "^9.1.1",
         "react": "^19.0.0",
         "react-date-range": "^2.0.1",
