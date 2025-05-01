@@ -1,8 +1,4 @@
-import {
-    Listing,
-    User,
-    Reservation,
-} from '@/prisma/app/generated/prisma/client';
+import { Listing, User, Reservation } from '@/app/generated/prisma/client';
 
 export type SafeListing = Omit<Listing, 'createdAt'> & { createdAt: string };
 
