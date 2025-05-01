@@ -5,6 +5,7 @@ import React, { useCallback } from 'react';
 import { TbPhotoPlus } from 'react-icons/tb';
 
 declare global {
+    // eslint-disable-next-line no-var
     var cloudinary: any;
 }
 
