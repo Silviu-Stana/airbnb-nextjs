@@ -1,5 +1,5 @@
 'use client';
-import React, { useCallback, useState } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import { AiOutlineMenu } from 'react-icons/ai';
 import Avatar from '../Avatar';
 import MenuItem from './MenuItem';
@@ -30,6 +30,13 @@ const UserMenu: React.FC<UserMenuProps> = ({ currentUser }) => {
         //Open Rent Modal
         rentModal.onOpen();
     }, [currentUser, loginModal, rentModal]);
+
+    useEffect(() => {
+        router.prefetch('/trips'); // manually prefetch the route
+        router.prefetch('/reservations');
+        router.prefetch('/properties');
+        router.prefetch('/favorites');
+    }, [router]);
 
     return (
         <div className="relative">
