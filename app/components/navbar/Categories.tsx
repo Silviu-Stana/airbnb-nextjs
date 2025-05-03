@@ -1,8 +1,8 @@
 'use client';
-import React from 'react';
+import React, { useEffect } from 'react';
 import Container from '../Container';
 import CategoryBox from '../CategoryBox';
-import { usePathname, useSearchParams } from 'next/navigation';
+import { usePathname, useRouter, useSearchParams } from 'next/navigation';
 
 import { categories } from '@/app/constants/categories';
 
@@ -11,6 +11,15 @@ const Categories = () => {
     const category = params.get('category');
 
     const pathname = usePathname();
+    const router = useRouter();
+
+    useEffect(() => {
+        router.prefetch('/?category=Beach');
+        router.prefetch('/?category=Windmills');
+        router.prefetch('/?category=Modern');
+        router.prefetch('/?category=Camping');
+        router.prefetch('/?category=Arctic');
+    }, [router]);
 
     const isMainPage = pathname === '/';
     if (!isMainPage) return null;
